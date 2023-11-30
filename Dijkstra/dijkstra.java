@@ -186,7 +186,7 @@ public class dijkstra {
         dijkstra dijkstra = new dijkstra();
 
         /* Reading in the three important variables we need */
-        Scanner in = new Scanner(new File("in3.txt"));
+        Scanner in = new Scanner(new File("in.txt"));
         dijkstra.numVertices = in.nextInt();
         dijkstra.sourceVertex = in.nextInt();
         dijkstra.numEdges = in.nextInt();
@@ -205,7 +205,7 @@ public class dijkstra {
         int[][] results = dijkstra.dijkstraAlgo();
 
         try {
-            FileWriter outputFile = new FileWriter("dijkstra3.txt");
+            FileWriter outputFile = new FileWriter("dijkstra.txt");
             outputFile.write("" + Integer.valueOf(dijkstra.numVertices));
             for(int i = 1; i <= dijkstra.numVertices; i++) {
                 outputFile.write("\n" + i + " " + results[i][1] + " " + results[i][0]);
