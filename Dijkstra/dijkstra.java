@@ -10,6 +10,11 @@
  * 
  *      After that are the following edges formatted as (source, destination, cost) 
  * 
+ *  Output files are formatted as follows:
+ *      -First line is the number of vertices
+ *      -The following n (num of vertices) lines are as follows:
+ *          (destination, weight, penultimate node to destination in our path)
+ * 
  *  To compile "javac dijkstra.java"
  *  To run "java dijkstra.java"
  * 
@@ -181,7 +186,7 @@ public class dijkstra {
         dijkstra dijkstra = new dijkstra();
 
         /* Reading in the three important variables we need */
-        Scanner in = new Scanner(new File("in.txt"));
+        Scanner in = new Scanner(new File("in3.txt"));
         dijkstra.numVertices = in.nextInt();
         dijkstra.sourceVertex = in.nextInt();
         dijkstra.numEdges = in.nextInt();
@@ -200,7 +205,7 @@ public class dijkstra {
         int[][] results = dijkstra.dijkstraAlgo();
 
         try {
-            FileWriter outputFile = new FileWriter("dijkstra.txt");
+            FileWriter outputFile = new FileWriter("dijkstra3.txt");
             outputFile.write("" + Integer.valueOf(dijkstra.numVertices));
             for(int i = 1; i <= dijkstra.numVertices; i++) {
                 outputFile.write("\n" + i + " " + results[i][1] + " " + results[i][0]);
